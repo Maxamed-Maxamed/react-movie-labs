@@ -2,7 +2,7 @@ import MovieDetailsPage from './pages/movieDetailsPage'
 
 import React from "react";
 import { createRoot } from "react-dom/client";
-import HomePage from "./pages/homePage";
+/* import HomePage from "./pages/homePage"; */
 
 
 const sample = {
@@ -70,10 +70,19 @@ const sample = {
     },
   ],
   production_countries: [
-    {
+   /*  {
       iso_3166_1: "US",
       name: "United States of America",
+    }, */
+
+    {
+      iso_3166_1: "IRL",
+      name: "Ireland",
     },
+
+
+
+
   ],
   release_date: "2017-12-13",
   revenue: 1332459537,
@@ -102,7 +111,7 @@ const images = [
 
 
 
-const movies = [sample, sample, sample, sample, sample, sample, sample];
+/* const movies = [sample, sample, sample, sample, sample, sample, sample]; */
 
 const App = () => {
   return (
