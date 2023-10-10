@@ -53,13 +53,22 @@ export default function FilterMoviesCard(props) {
       // eslint-disable-next-line
   }, []);
 
+  // const handleChange = (e, type, value) => {
+  //   e.preventDefault()
+  //   // Completed later
+  // };
+  
   const handleChange = (e, type, value) => {
     e.preventDefault()
-    // Completed later
-  };
+    props.onUserInput(type, value)   // NEW
+  }
+
+
   const handleTextChange = e => {
     handleChange(e, "name", e.target.value)
   }
+
+
   const handleGenreChange = e => {
     handleChange(e, "genre", e.target.value)
   };
