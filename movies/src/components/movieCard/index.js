@@ -26,7 +26,14 @@ export default function MovieCard(props) {
   };
 
 
+
+
+
   const movie = props.movie;
+
+
+
+  
   return (
     <Card sx={{ maxWidth: 345 }}>
       {/* <CardHeader title={movie.title} /> */}
