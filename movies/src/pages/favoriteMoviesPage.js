@@ -1,37 +1,12 @@
-// // import React from "react";
-
-// // const FavoriteMoviesPage = () => {
-// //     return <h2>Favorite Movies</h2>
-// // }
-
-// // export default FavoriteMoviesPage
-
-
-// import React from "react";
-// import PageTemplate from "../components/templateMovieListPage";
-
-// const FavoriteMoviesPage = (props) => {
-//   const toDo = () => true;
-//   // Get movies from local storage.
-//   const movies = JSON.parse(localStorage.getItem("favorites")); 
-
-//   return (
-//     <PageTemplate
-//       title="Favourite Movies"
-//       movies={movies}
-//       selectFavorite={toDo}
-//     />
-//   );
-// };
-
-// export default FavoriteMoviesPage;
 
 import React, { useContext } from "react";
 import PageTemplate from "../components/templateMovieListPage";
 import { MoviesContext } from "../contexts/moviesContext";
 import { useQueries } from "react-query";
 import { getMovie } from "../api/tmdb-api";
-import Spinner from '../components/spinner'
+import Spinner from '../components/spinner';
+import RemoveFromFavorites from "../components/cardIcons/removeFromFavorites";
+import WriteReview from "../components/cardIcons/writeReview";
 
 const FavoriteMoviesPage = () => {
   const {favorites: movieIds } = useContext(MoviesContext);
@@ -57,15 +32,30 @@ const FavoriteMoviesPage = () => {
     return q.data
   });
 
-  const toDo = () => true;
+  // const toDo = () => true;
 
-  return (
-    <PageTemplate
-      title="Favourite Movies"
-      movies={movies}
-      selectFavorite={toDo}
-    />
-  );
+//   return (
+//     <PageTemplate
+//       title="Favourite Movies"
+//       movies={movies}
+//       selectFavorite={toDo}
+//     />
+//   );
+// };
+return (
+  <PageTemplate
+    title="Favorite Movies"
+    movies={movies}
+    action={(movie) => {
+      return (
+        <>
+          <RemoveFromFavorites movie={movie} />
+          <WriteReview movie={movie} />
+        </>
+      );
+    }}
+  />
+);
 };
 
 export default FavoriteMoviesPage;
