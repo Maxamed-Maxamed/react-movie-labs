@@ -14,6 +14,9 @@ const UpcomingPage = (props) => {
     getUpcomingMovies
   );
 
+
+
+  
   // useEffect(() => {
   //   console.log(data);
   // });
