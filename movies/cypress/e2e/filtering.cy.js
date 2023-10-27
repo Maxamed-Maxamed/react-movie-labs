@@ -52,7 +52,7 @@ describe("Filtering", () => {
     });
   });
 
-  describe.only("Combined genre and title", () => {
+  describe("Combined genre and title", () => {
     it("search for specific movie with selected genre", () => {
         const selectedGenreText = "Drama";
         const searchString = "Nowhere";
