@@ -48,9 +48,24 @@ describe("Navigation", () => {
       }
     );
   });
-  describe("From the favourites page to a movie's details", () => {
-    // TODO
-  });
+
+  describe.only("From the favourites page to a movie's details", () => {
+    // TODO favourite page, click more info
+    it("favourites a movie, navigates to the favourites page then movie details page", () => {
+        cy.get("button[aria-label='add to favorites']").eq(1).click();
+
+        cy.get("button").contains("Favorites").click();
+        cy.url().should("include", `/favorites`);
+
+        cy.get(".MuiCardActions-root").eq(0).contains("More Info").click();
+        cy.url().should("include", `/movies/${movies[1].id}`);
+      });
+
+
+      
+
+
+
   describe("The forward/backward links", () => {
     beforeEach(() => {
       cy.get(".MuiCardActions-root").eq(0).contains("More Info").click();
