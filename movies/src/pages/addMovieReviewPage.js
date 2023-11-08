@@ -10,6 +10,8 @@ const WriteReviewPage = (props) => {
   const location = useLocation();
   const movieId = location.state.movieId;
 
+  /* The code is using the `useQuery` hook from the `react-query` library to fetch movie data from the
+  `getMovie` function. */
   const { data: movie, error, isLoading, isError } = useQuery(
     ["movie", { id: movieId }],
     getMovie
